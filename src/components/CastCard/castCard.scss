@@ -1,0 +1,34 @@
+@import "../../variables.scss";
+.castCard {
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  width: 150px;
+  margin: 6px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  vertical-align: top;
+  img {
+    width: 100%;
+  }
+  .content {
+    padding: 10px;
+    min-height: 80px;
+    white-space: break-spaces;
+    a {
+      font-weight: bold;
+      color: $darkBlue;
+      white-space: break-spaces;
+      h3 {
+        font-size: 16px;
+      }
+    }
+    p {
+      margin: 0px;
+      font-size: 0.9em;
+      color: $darkBlue;
+    }
+  }
+  :first-child {
+    margin: 0;
+  }
+}

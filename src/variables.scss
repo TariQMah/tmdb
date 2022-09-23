@@ -1,0 +1,31 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,400;1,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+// colors
+$white: #fff;
+$darkGray: #797c77;
+$darkBlue: #032541;
+$searchInput: #00000080;
+
+// font-sizes
+$mainHeading: 26px;
+$subHeading: 20px;
+$paragraph: 14px;
+$movieTitle: 18px;
+$movieDate: 14px;
+
+// radius
+$searchInputRadius: 30px;
+$btnRadius: 50px;
+$imageRadius: 10px;
+$fullRadius: 100%;

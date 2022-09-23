@@ -1,0 +1,31 @@
+@import "../../variables.scss";
+
+.searchContainer {
+  width: 100%;
+  margin-top: 80px;
+  .searchResultCard {
+    all: unset;
+    background: #fff;
+    padding: 0px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    display: flex;
+    margin: 20px 0;
+    &:hover {
+      background: #f0ebeb;
+    }
+    .poster {
+      margin: 5px;
+      & img {
+        border-radius: 10px;
+      }
+    }
+    .details {
+      padding: 20px;
+      flex: 1;
+      h2 {
+        font-size: 25px;
+      }
+    }
+  }
+}

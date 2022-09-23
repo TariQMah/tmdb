@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+.recommendationCard {
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  width: 300px;
+  margin: 6px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  vertical-align: top;
+  img {
+    width: 100%;
+  }
+
+  .content {
+    padding: 10px;
+    min-height: 80px;
+    display: flex;
+    .left {
+      flex: 0.85;
+      a {
+        font-weight: bold;
+        color: $darkBlue;
+        white-space: break-spaces;
+        h3 {
+          font-size: 16px;
+          margin: 0;
+        }
+      }
+      p {
+        margin: 0px;
+        font-size: 0.9em;
+        color: $darkBlue;
+        white-space: break-spaces;
+      }
+    }
+
+    .right {
+      flex: 0.15;
+      > .chart {
+        background: $darkBlue;
+        padding: 2px;
+        border-radius: $fullRadius;
+      }
+    }
+  }
+}

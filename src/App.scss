@@ -1,0 +1,228 @@
+@import "./variables.scss";
+
+.top-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $darkBlue;
+  height: 60px;
+  width: 100%;
+  z-index: 10;
+  transition: top 0.2s linear;
+}
+.main-body {
+  margin-top: 60px;
+}
+.logo {
+  padding: 10px;
+}
+.nav {
+  color: $white;
+  .nav-item {
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-bottom: 2px solid transparent;
+    .active {
+      border-bottom: 2px solid $white;
+    }
+  }
+}
+.heroSection {
+  background: url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg")
+    $darkBlue;
+  background-size: cover;
+  background-position: top center;
+  min-height: 300px;
+  height: calc(100vh / 2.5);
+  padding: 30px;
+  display: flex;
+  .alignMiddle {
+    display: flex;
+
+    flex-direction: column;
+    align-self: center;
+    flex: 1;
+    .searchContainer {
+      margin-top: 40px;
+      overflow: hidden;
+      border-radius: $searchInputRadius;
+      background: $white;
+
+      form {
+        display: flex;
+      }
+      input[type="text"] {
+        background: $white;
+        width: 100%;
+        padding: 20px;
+        border: none;
+        color: $searchInput;
+        outline: unset;
+      }
+      button {
+        background: $darkBlue;
+        padding: 5px 20px;
+        border: none;
+        outline: none;
+        border-radius: $searchInputRadius;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        color: $white;
+      }
+    }
+    h2 {
+      font-size: 3em;
+      font-weight: 700;
+      line-height: 1;
+    }
+    h3 {
+      font-size: 2em;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+}
+.heroSection:has(h2, h3) {
+  color: $white;
+}
+
+.moviesSection {
+  margin: 40px 0;
+  .filtersSection {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+  }
+  .fitlers {
+    display: flex;
+    justify-content: space-between;
+    background: $white;
+    border: 1px solid $darkBlue;
+    border-radius: 20px;
+    height: 35px;
+    overflow: hidden;
+    .active {
+      text-shadow: 0 0 1px $white, 0 0 1px $white, 0 0 1px $white;
+      color: $white !important;
+      background: $darkBlue;
+    }
+    .filter {
+      padding: 2px 5px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: $darkBlue;
+      cursor: pointer;
+      justify-content: center;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+    }
+  }
+  > h2 {
+    color: $darkBlue;
+    font-size: 20px;
+  }
+
+  .moviesGrid {
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+
+    > a {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      color: inherit;
+      min-height: calc(200px * 1.5);
+      .poster {
+        box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+        width: 100%;
+        position: relative;
+        border-radius: $imageRadius;
+        background: #dbdbdb;
+        img {
+          display: inline-block;
+          width: 100%;
+          border-radius: $imageRadius;
+          object-fit: contain;
+          height: 100%;
+        }
+        .rating {
+          position: absolute;
+          height: 40px;
+          width: 40px;
+          background: $darkBlue;
+          border-radius: $fullRadius;
+          display: flex;
+          align-items: center;
+          bottom: -15px;
+          left: 10px;
+          padding: 2px;
+          .total {
+            color: $white;
+            font-size: 40px;
+            top: 10px;
+            position: absolute;
+          }
+        }
+      }
+      .heading {
+        margin-top: 20px;
+        h2 {
+          margin: 0px;
+          font-size: $movieTitle;
+          color: $darkBlue;
+        }
+        p {
+          font-size: $movieDate;
+        }
+      }
+    }
+  }
+}
+
+.skeleton {
+  span {
+    height: 100%;
+  }
+}
+.tooltip,
+.tooltip-inner {
+  top: 8px !important;
+  background: $darkBlue;
+  .tooltip-arrow {
+    top: -7px;
+  }
+  .tooltip-arrow::before {
+    border-bottom-color: $darkBlue;
+  }
+}
+
+.toasterSetting {
+  z-index: 999;
+  top: 80px !important;
+  .toast {
+    color: $white;
+  }
+}
+@media (min-width: 600px) {
+  .moviesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .moviesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .moviesGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
